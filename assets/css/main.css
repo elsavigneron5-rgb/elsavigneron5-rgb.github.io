@@ -2287,10 +2287,6 @@ input[type="radio"] + label:before {
 .image.fit img {
   display: block;
   width: 100%;
-  max-width: 100xp;
-  height: 100xp;
-  object-fit: cover;
-  border-radius: 8xp;
 }
 
 .image.avatar {
@@ -3464,3 +3460,208 @@ input[type="button"]:disabled,
 #header p {
     text-align: center;
 }
+/* Couleur des icônes LinkedIn, GitHub et e-mail */
+#header .icons a {
+color: #fafafa !important;
+transition: color 0.3s ease;
+}
+
+/* Couleur au survol */
+#header .icons a:hover {
+color: #B67F83 !important;
+}
+
+/* Bouton pour afficher/masquer la barre latérale */
+#sidebar-toggle {
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  z-index: 10003;
+  width: 2.75em;
+  height: 2.75em;
+  border: 0;
+  border-radius: 5px;
+  background: #C58F91;
+  color: #ffffff;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#sidebar-toggle:hover {
+  background: #B67F83;
+}
+
+/* Sur ordinateur uniquement */
+@media screen and (min-width: 1025px) {
+  #header {
+    transition: transform 0.4s ease;
+  }
+
+  #wrapper {
+    transition: padding-right 0.4s ease;
+  }
+
+  /* Barre masquée : elle sort à droite, le contenu prend toute la largeur */
+  body.sidebar-hidden #header {
+    transform: translateX(100%);
+  }
+
+  body.sidebar-hidden #wrapper {
+    padding-right: 0;
+  }
+}
+
+/* Sur tablette et mobile, le thème a déjà son propre bouton de menu */
+@media screen and (max-width: 1024px) {
+  #sidebar-toggle {
+    display: none;
+  }
+}
+
+/* Apparition au défilement */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respecte les personnes qui désactivent les animations dans leur système */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Bouton du mode sombre (à gauche du bouton de la barre latérale) */
+#theme-toggle {
+  position: fixed;
+  top: 1em;
+  right: 4.5em;
+  z-index: 10003;
+  width: 2.75em;
+  height: 2.75em;
+  border: 0;
+  border-radius: 5px;
+  background: #C58F91;
+  color: #ffffff;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#theme-toggle:hover {
+  background: #B67F83;
+}
+
+/* Sur tablette et mobile, on le place à gauche du bouton rose du thème */
+@media screen and (max-width: 1024px) {
+  #theme-toggle {
+    top: 3px;
+    right: 70px;
+    width: 38px;
+    height: 38px;
+    font-size: 1em;
+  }
+}
+
+/* Transitions douces entre les deux modes */
+body,
+#wrapper,
+#footer,
+#header {
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+/* ===== MODE SOMBRE ===== */
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body {
+  background: #2c2029;
+}
+
+html.dark #wrapper {
+  background: #2c2029;
+  color: #e6d9de;
+}
+
+html.dark body,
+html.dark input,
+html.dark select,
+html.dark textarea {
+  color: #e6d9de;
+}
+
+/* Titres du contenu */
+html.dark #wrapper h1,
+html.dark #wrapper h2,
+html.dark #wrapper h3,
+html.dark #wrapper h4,
+html.dark #wrapper h5,
+html.dark #wrapper h6 {
+  color: #e3a9bc;
+}
+
+html.dark #wrapper header.major h2 {
+  color: #f0c4d2;
+}
+
+html.dark #wrapper header.major h2 + p {
+  color: #e3a9bc;
+}
+
+html.dark #wrapper strong,
+html.dark #wrapper b {
+  color: #f0e4e9;
+}
+
+/* Séparateurs entre sections et articles */
+html.dark #main > section {
+  border-top-color: #2d1f27;
+}
+
+html.dark .features article {
+  border-top-color: #2d1f27;
+}
+
+html.dark a {
+  border-bottom-color: #4a3640;
+}
+
+/* Barre latérale plus sombre */
+html.dark #header {
+  background: #2e0f1b;
+}
+
+html.dark #header > nav ul li {
+  border-top-color: #5a2a3c;
+}
+
+html.dark #header > nav ul li a.active {
+  background: #2c2029;
+  color: #e3a9bc !important;
+}
+
+/* Pied de page */
+html.dark #footer {
+  background: #2c2029;
+  color: #b9a5ad;
+}
+
+html.dark #footer .copyright li {
+  border-left-color: #4a3640;
+}
+

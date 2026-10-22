@@ -4,7 +4,7 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="fr">
   <head>
     <title>Elsa Vigneron</title>
     <meta charset="utf-8" />
@@ -13,6 +13,10 @@
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css"
+/>
   </head>
   <body class="is-preload">
     <!-- Header -->
@@ -30,15 +34,17 @@
       <nav id="nav">
         <ul>
           <li><a href="#one" class="active">À propos</a></li>
-          <li><a href="#two">Mon travail</a></li>
+          <li><a href="#two">Mes compétences</a></li>
           <li><a href="#three">Mon CV</a></li>
+          <li><a href="#recherche">Recherche</a></li>
+          <li><a href="#experiences">Expériences</a></li>
           <li><a href="#four">Contact</a></li>
         </ul>
       </nav>
       <footer>
         <ul class="icons">
           <li>
-            <a href="linkedin.com/in/elsa-vigneron-23641a331" class="icon brands fa-linkedin"
+            <a href="https://linkedin.com/in/elsa-vigneron-23641a331" class="icon brands fa-linkedin"
               ><span class="label">LinkedIn</span></a
             >
           </li>
@@ -55,6 +61,14 @@
         </ul>
       </footer>
     </section>
+
+<button id="sidebar-toggle" aria-label="Afficher ou masquer le menu" aria-expanded="true">
+  ☰
+</button>
+
+<button id="theme-toggle" aria-label="Activer le mode sombre" aria-pressed="false">
+  ☾
+</button>
 
     <!-- Wrapper -->
     <div id="wrapper">
@@ -79,7 +93,7 @@
         <!-- Two -->
         <section id="two">
           <div class="container">
-            <h3>Mes réalisations</h3>
+            <h3>Mes compétences</h3>
             <p>
               Cette section présente les compétences que je développe au fil de mon parcours universitaire, ainsi que les projets et les travaux que j'ai pu mener. Ces derniers témoignent de mes intérêts pour le développement international, la géopolitique et les enjeux climatiques.
             </p>
@@ -130,12 +144,44 @@
                 Télécharger mon CV
               </a>
             </p>
+          </div>
+        </section>
 
+             <!-- Recherche -->
+        <section id="recherche">
+          <div class="container">
+            <h3>Mon travail de recherche</h3>
+            <p>
+              Cette section contient l'article de recherche que j'ai réalisé au cours de ma troisième année de Bachelor en relations internationales.
+            </p>
+
+            <div class="research-list">
+              <article class="research-card">
+                <p class="research-meta">Article de recherche, 2025, en anglais</p>
+                <h4>Truth and Reconciliation Commissions in Northern Europe</h4>
+                <p>
+                  La Norvège, la Finlande et la Suède ont créé des commissions de vérité et de réconciliation pour revenir sur les injustices subies par le peuple autochtone Sámi. 
+                  Cet article se demande si ces processus réparent réellement le passé, ou s'ils servent surtout à préserver l'autorité et la légitimité des États. 
+                  En mobilisant la théorie du colonialisme de peuplement et la politique de la reconnaissance, il soutient que la réconciliation prolonge l'assimilation sous une forme plus moderne. 
+                </p>
+                
+                </ul>
+                <a href="recherche/articler.pdf" target="_blank" rel="noopener" class="button primary small">
+                Lire l'article
+              </a>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="experiences">
+          <div class="container">
+              <h3>Mes expériences</h3>
             <div class="features">
               <article>
-                <a href="#" class="image"
-                  ><img src="images/FDNU.jpg" alt=""
-                /></a>
+                <a href="https://www.fdnu.fr" class="image"
+                  ><img src="images/FDNU.jpg" alt="Logo de la Fédération pour la Diplomatie et les Nations Unies"/>
+                </a>
                 <div class="inner">
                   <h4>Fédération pour la Diplomatie et les Nations Unies (FDNU)</h4>
                   <p>
@@ -144,8 +190,8 @@
                 </div>
               </article>
                 <article>
-                  <a href="#" class="image">
-                    <img src="images/Elabe.jpg" alt="" />
+                  <a href="https://elabe.fr" class="image">
+                    <img src="images/Elabe.jpg" alt="Logo du cabinet ELABE" />
                 </a>
                 <div class="inner">
                   <h4>Stage chez ELABE</h4>
@@ -155,8 +201,8 @@
                 </div>
               </article>
                 <article>
-                  <a href="#" class="image">
-                    <img src="images/MLC.jpg" alt="" />
+                  <a href="https://www.mlcmontigny.com/" class="image">
+                    <img src="images/MLC.jpg" alt="Logo de la Maison des Loisirs et de la Culture" />
                 </a>
                 <div class="inner">
                   <h4>Maison des Loisirs et de la Culture (MLC)</h4>
@@ -197,7 +243,7 @@
       <section id="footer">
         <div class="container">
           <ul class="copyright">
-            <li>&copy; 2026 Elsa Vigneron. All rights reserved.</li>
+            <li>&copy; 2026 Elsa Vigneron. Tous droits réservés.</li>
             <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
           </ul>
         </div>
@@ -212,6 +258,69 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+  const toggle = document.getElementById("sidebar-toggle");
+  toggle.addEventListener("click", function () {
+    const hidden = document.body.classList.toggle("sidebar-hidden");
+    toggle.setAttribute("aria-expanded", String(!hidden));
+  });
+</script>
+
+<script>
+  // Éléments qui doivent apparaître au défilement
+  const items = document.querySelectorAll(
+    "#main .container > *:not(.features), .features article"
+  );
+
+  const observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  items.forEach(function (item) {
+    item.classList.add("reveal");
+    observer.observe(item);
+  });
+</script>
+
+<script>
+  const root = document.documentElement;
+  const themeBtn = document.getElementById("theme-toggle");
+
+  function applyTheme(dark) {
+    root.classList.toggle("dark", dark);
+    themeBtn.textContent = dark ? "☀" : "☾";
+    themeBtn.setAttribute("aria-pressed", String(dark));
+    themeBtn.setAttribute(
+      "aria-label",
+      dark ? "Activer le mode clair" : "Activer le mode sombre"
+    );
+  }
+
+  // Au chargement : choix précédent, sinon préférence du système
+  let saved = null;
+  try {
+    saved = localStorage.getItem("theme");
+  } catch (e) {}
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  applyTheme(saved ? saved === "dark" : prefersDark);
+
+  themeBtn.addEventListener("click", function () {
+    const dark = !root.classList.contains("dark");
+    applyTheme(dark);
+    try {
+      localStorage.setItem("theme", dark ? "dark" : "light");
+    } catch (e) {}
+  });
+</script>
+
   </body>
 </html>
 
