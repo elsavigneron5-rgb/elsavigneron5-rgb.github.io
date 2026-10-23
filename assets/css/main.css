@@ -3665,3 +3665,32 @@ html.dark #footer .copyright li {
   border-left-color: #4a3640;
 }
 
+/* Barre latérale : tout tient sans défiler (ordinateur) */
+@media screen and (min-width: 1025px) {
+  #header > header {
+    padding: clamp(2em, 5vh, 3em) 2em clamp(0.5em, 2hv, 3em);
+  }
+
+  #header > header .avatar {
+    width: clamp(4em, 13vh, 8em);
+    margin-bottom: clamp(0.75em, 2vh, 2.25em);
+  }
+
+  #header > header h1 {
+    font-size: clamp(1.2em, 3vh, 1.75em);
+  }
+
+  #header > header p {
+    font-size: clamp(0.7em, 1.8vh, 1em);
+    line-height: 1.5em;
+    margin-top: clamp(0.75em, 2vh, 1.25em);
+  }
+
+  #header > nav ul li a {
+    padding: clamp(0.4em, 1.6vh, 0.85em) 0;
+  }
+
+  #header > footer {
+    padding: clamp(0.75em, 2vh, 2em);
+  }
+}
